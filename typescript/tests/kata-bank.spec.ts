@@ -1,16 +1,4 @@
-
-class Account {
-    printStatement() {
-        console.log('DATE | AMOUNT | BALANCE')
-    }
-    withdraw(arg0: number) {
-        throw new Error("Method not implemented.");
-    }
-    deposit(arg0: number) {
-        throw new Error("Method not implemented.");
-    }
-  // Implement
-}
+import {Account} from "../src/account";
 
 describe.skip(`Given a client makes a deposit of 1000 on 20/01/2022
         And a deposit of 2000 on 23/01/2022
