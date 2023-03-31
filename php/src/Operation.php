@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Kata;
 
-interface Operation
+abstract class Operation
 {
+    public function __construct(
+        public int $amount
+    ) {
+    }
 }
