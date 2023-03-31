@@ -10,4 +10,6 @@ abstract class Operation
         public int $amount
     ) {
     }
+
+    abstract function type(): string;
 }

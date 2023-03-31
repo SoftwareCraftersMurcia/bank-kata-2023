@@ -13,6 +13,9 @@ class Operations
         $this->operations[] = $operation;
     }
 
+    /**
+     * @return list<Operation>
+     */
     public function getOperations(): array
     {
         return $this->operations;
