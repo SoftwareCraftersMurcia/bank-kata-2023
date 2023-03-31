@@ -1,7 +1,7 @@
 
 class Account {
     printStatement() {
-        throw new Error("Method not implemented.");
+        console.log('DATE | AMOUNT | BALANCE')
     }
     withdraw(arg0: number) {
         throw new Error("Method not implemented.");
@@ -24,5 +24,15 @@ describe.skip(`Given a client makes a deposit of 1000 on 20/01/2022
         account.printStatement();
         // Then she would see at the terminal
         expect(console.log).toBeCalledWith();
+    });
+});
+
+describe(`Account.printStatement()`, () => {
+    it('should return account movements', () => {
+        jest.spyOn(global.console, 'log').mockImplementation()
+        const account = new Account();
+        account.printStatement();
+        // Then she would see at the terminal
+        expect(console.log).toBeCalledWith('DATE | AMOUNT | BALANCE');
     });
 });
