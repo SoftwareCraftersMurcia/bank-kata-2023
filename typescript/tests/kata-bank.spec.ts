@@ -21,8 +21,12 @@ describe.skip(`Given a client makes a deposit of 1000 on 20/01/2022
 });
 
 describe(`Deposits and printStatement`, () => {
-  it("should return account movements", () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
     jest.spyOn(global.console, "log").mockImplementation();
+  });
+
+  it("should return account movements", () => {
     const account = new Account();
 
     account.printStatement();
@@ -31,8 +35,6 @@ describe(`Deposits and printStatement`, () => {
   });
 
   it("should print the first deposit", () => {
-    jest.resetAllMocks();
-    jest.spyOn(global.console, "log").mockImplementation();
     const account = new Account();
 
     account.deposit(1000);
