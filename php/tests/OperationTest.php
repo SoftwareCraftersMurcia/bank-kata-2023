@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace KataTests;
 
 use Kata\Account;
+use Kata\Deposit;
 use Kata\Operations;
+use Kata\Withdraw;
 use PHPUnit\Framework\TestCase;
 
 class OperationTest extends TestCase
@@ -13,12 +15,12 @@ class OperationTest extends TestCase
     public function test_add_operations(): void
     {
         $operations = new Operations();
-        $operations->add(['deposit', 500]);
-        $operations->add(['withdraw', 600]);
+        $operations->add(new Deposit(500));
+        $operations->add(new Withdraw(600));
 
         $expected = [
-            ['deposit', 500],
-            ['withdraw', 600],
+            new Deposit(500),
+            new Withdraw(600),
         ];
 
         $this->assertEquals($expected, $operations->getOperations());

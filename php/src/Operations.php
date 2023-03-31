@@ -8,9 +8,9 @@ class Operations
 {
     private array $operations = [];
 
-    public function add(array $array): void
+    public function add(Operation $operation): void
     {
-        $this->operations[] = $array;
+        $this->operations[] = $operation;
     }
 
     public function getOperations(): array
