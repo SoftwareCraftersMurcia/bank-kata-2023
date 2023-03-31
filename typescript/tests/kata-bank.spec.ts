@@ -12,7 +12,7 @@ describe.skip(`Given a client makes a deposit of 1000 on 20/01/2022
         account.withdraw(500);
         account.printStatement();
 
-        expect(console.log).toBeCalledWith();
+        expect(console.log).toHaveBeenCalledWith();
     });
 });
 
@@ -23,6 +23,6 @@ describe(`Account.printStatement()`, () => {
 
         account.printStatement();
 
-        expect(console.log).toBeCalledWith('DATE | AMOUNT | BALANCE');
+        expect(console.log).toHaveBeenCalledWith('DATE | AMOUNT | BALANCE');
     });
 });
