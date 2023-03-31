@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace KataTests;
 
+use Kata\Account;
 use PHPUnit\Framework\TestCase;
 
 class BankTest extends TestCase
